@@ -1,0 +1,37 @@
+{
+  "name": "aws-s3-classes",
+  "version": "1.0.0",
+  "description": "ES6 classes for common S3 calls. Promise enabled.",
+  "main": "lib/aws-s3-classes.js",
+  "directories": {
+    "lib": "./lib",
+    "doc": "./doc",
+    "test": "./test",
+    "example": "./example"
+  },
+  "scripts": {
+    "test": "mocha -t 10000 --async-only --reporter spec --ui bdd test/test-aws-s3-classes.js",
+    "generateDocs": "node_modules/.bin/jsdoc lib --destination doc --readme resources/jsdoc-home.html"
+  },
+  "keywords": [
+    "AWS",
+    "S3",
+    "class",
+    "promise"
+  ],
+  "author": "Bill Hodges",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wildbillh/aws-s3-classes"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.6.10",
+    "hybrid-array-runner": "^1.0.0"
+  },
+  "engine": "node >= 6.0.0"
+}
