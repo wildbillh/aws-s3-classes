@@ -2,16 +2,18 @@
 _A set of promise enabled, ES6 Classes for applying common AWS S3 methods.
 All methods return a promise._
 
+##Class and Method Summary
 Class   | Methods Supported
 --------|---------------------
 Copy    | copyObject
 Del     | deleteObject, deleteObjects
-Get     | getObject, getObjects*, writeObjectToLocalFile*
-List    | listObjects**
-Put     | writeObjectFromLocalFile*
+Get     | getObject, getObjects\*, writeObjectToLocalFile\*
+List    | listObjects\*\*
+Put     | writeObjectFromLocalFile\*
 
-\* Not available from AWS S3
-** Available from AWS S3, but highly augmented
+_\* Not available from AWS S3_
+
+_\*\* Available from AWS S3, but highly augmented_
 
 ##Synopsis
 
