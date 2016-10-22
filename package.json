@@ -1,6 +1,6 @@
 {
   "name": "aws-s3-classes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ES6 classes for common S3 calls. Promise enabled.",
   "main": "lib/aws-s3-classes.js",
   "directories": {
