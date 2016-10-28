@@ -1,3 +1,4 @@
 node_modules/
 test/
 setenv.bat
+.idea
