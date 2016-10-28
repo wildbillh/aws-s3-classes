@@ -2,3 +2,4 @@ node_modules/
 test/
 setenv.bat
 .idea
+npm-debug.log
