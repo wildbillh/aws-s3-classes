@@ -1,5 +1,5 @@
 #AWS S3 Classes
-_A set of promise enabled, ES6 Classes for applying common AWS S3 methods.
+_A set of promise enabled, ES6 Classes for applying common AWS S3 methods._
 
 [![Inline docs](http://inch-ci.org/github/wildbillh/serialized-array-runner.svg?branch=master)](http://inch-ci.org/github/wildbillh/serialized-array-runner)[![npm version](https://badge.fury.io/js/serialized-array-runner.svg)](https://badge.fury.io/js/serialized-array-runner)
 
