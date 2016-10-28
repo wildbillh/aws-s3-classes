@@ -63,7 +63,7 @@ describe('AWS Wrapper Tests', function () {
 
 
     describe('Copy Get, List, Put and Delete tests ', function () {
-        it('After setup there should no be no objects in the test bucket', function () {
+        step('After setup there should no be no objects in the test bucket', function () {
             let config = {Bucket: awsSetup.TEST_BUCKET};
             return new AWSWrapper.List(s3).listObjects(config)
                 .then(function (data) {
@@ -72,7 +72,7 @@ describe('AWS Wrapper Tests', function () {
         });
 
         // Add an object called test1.txt to the bucket and verify it exists
-        it('Put,List: Putting an object in the bucket should result in one object in the list', function () {
+        step('Put,List: Putting an object in the bucket should result in one object in the list', function () {
             let config = {Bucket: awsSetup.TEST_BUCKET, Key: 'test1.txt'};
             // Write the object to the test bucket
             return new AWSWrapper.Put(s3).writeObjectFromLocalFile(config, awsSetup.LOCAL_FILENAME)
@@ -92,7 +92,7 @@ describe('AWS Wrapper Tests', function () {
         // After the prior test, we have one object in the test bucket with the name test1.txt
         // Now copy that object to a new object called test2.txt
 
-        it('Copy,List: Copying the original object, should result in 2 objects in the bucket', function () {
+        step('Copy,List: Copying the original object, should result in 2 objects in the bucket', function () {
             let config = {
                 Bucket: awsSetup.TEST_BUCKET,
                 Key: 'test2.txt',
@@ -109,7 +109,7 @@ describe('AWS Wrapper Tests', function () {
 
         // Now we have test1.text and test2.txt in our bucket.
 
-        it('Get: Get the contents of both files', function () {
+        step('Get: Get the contents of both files', function () {
             let config = [
                 {   Bucket: awsSetup.TEST_BUCKET,
                     Key: 'test1.txt' },
@@ -127,7 +127,7 @@ describe('AWS Wrapper Tests', function () {
 
 
         // Delete test2.txt and verify
-        it('Delete,List: Deleting the copied object, should result in 1 object in the bucket', function () {
+        step('Delete,List: Deleting the copied object, should result in 1 object in the bucket', function () {
             let config = {
                 Bucket: awsSetup.TEST_BUCKET,
                 Key: 'test2.txt'
@@ -142,7 +142,7 @@ describe('AWS Wrapper Tests', function () {
         });
 
         // Get the contents of test1.txt in a buffer and compare the size and contents to the original
-        it('Get: Get the contents of the object and verify', function () {
+        step('Get: Get the contents of the object and verify', function () {
             let config = {
                 Bucket: awsSetup.TEST_BUCKET,
                 Key: 'test1.txt'
@@ -155,7 +155,7 @@ describe('AWS Wrapper Tests', function () {
         });
 
         // Write the contents of the temp file created above to an object, get it and compare the contents
-        it('Get-writeObjectToLocalFile, Get: Write the contents of a an object to a local file, get it and verify', function () {
+        step('Get-writeObjectToLocalFile, Get: Write the contents of a an object to a local file, get it and verify', function () {
             let config = {
                 Bucket: awsSetup.TEST_BUCKET,
                 Key: 'test1.txt'
@@ -171,7 +171,7 @@ describe('AWS Wrapper Tests', function () {
                 });
         });
 
-        it('Put-writeObjectFromLocalFile, Get: Write the contents of local file to an object and verify', function () {
+        step('Put-writeObjectFromLocalFile, Get: Write the contents of local file to an object and verify', function () {
             let config = {
                 Bucket: awsSetup.TEST_BUCKET,
                 Key: 'test3.txt'
@@ -189,7 +189,7 @@ describe('AWS Wrapper Tests', function () {
 
 
         // Exercise the deleteAll function
-        it('DeleteAll, List: Send an array of objects to delete, should result in 0 objects in the bucket', function () {
+        step('DeleteAll, List: Send an array of objects to delete, should result in 0 objects in the bucket', function () {
             let config = {
                 Bucket: awsSetup.TEST_BUCKET,
                 Delete: { Objects: [
